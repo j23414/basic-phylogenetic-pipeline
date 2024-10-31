@@ -7,7 +7,7 @@ OUTDIR=results
 
 [[ -d $OUTDIR ]] || mkdir $OUTDIR
 
-mafft --auto $INPUT_SEQUENCE_FILE > ${OUTDIR}/aligned.fasta
+mafft --auto --adjustdirection --thread 4 $INPUT_SEQUENCE_FILE > ${OUTDIR}/aligned.fasta
 
 fasttree -nt ${OUTDIR}/aligned.fasta > ${OUTDIR}/tree.nwk
 
