@@ -7,6 +7,13 @@ OUTDIR=results
 
 [[ -d $OUTDIR ]] || mkdir $OUTDIR
 
+# python annotate_header.py \
+#   --metadata wnv.tsv \
+#   --metadata-columns "region,country,division,host,clade_membership,p_lineage,date" \
+#   --sequences wgs.fasta \
+#   | tr ' ' '_' \
+#   > wnv.fasta
+
 mafft --auto --adjustdirection --thread 4 $INPUT_SEQUENCE_FILE > ${OUTDIR}/aligned.fasta
 
 fasttree -nt ${OUTDIR}/aligned.fasta > ${OUTDIR}/tree.nwk
