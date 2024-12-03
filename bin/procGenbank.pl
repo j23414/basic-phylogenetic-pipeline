@@ -103,14 +103,15 @@ sub printEntry(){
     $fasta=~s/ //g;
     $fasta=~s/\n//g;
     $fasta=~s/\r//g;
-    if($start>0 && $stop>0){
-    	$fasta = substr($fasta, $start-1, $stop-$start+1);
-    }
+#    if($start>0 && $stop>0){
+#    	$fasta = substr($fasta, $start-1, $stop-$start+1);
+#    }
 
     $segment="_$segment";
 
 #    print ">",join("|",$gb,$strain,$subtype,$col_date,$segment),"\n";
-    print ">",join("|",$gb,$strain,$subtype,$col_date),"\n";
+    print ">$gb\n";
+    #print ">",join("|",$gb,$strain,$subtype,$col_date),"\n";
     print $fasta,"\n";
 
     # = Reset variables
