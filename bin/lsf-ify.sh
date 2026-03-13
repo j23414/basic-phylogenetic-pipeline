@@ -21,6 +21,8 @@ cat << '_EOF'
 #BSUB -o out.%J
 #BSUB -e err.%J
 #BSUB -J JOBB
+#BSUB -N
+#### BSUB -u username@email.org
 set -e
 set -u
 
