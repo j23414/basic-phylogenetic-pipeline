@@ -25,6 +25,7 @@ cat << '_EOF'
 #### BSUB -u username@email.org
 set -e
 set -u
+# source /etc/bashrc.modules # some hpcs configs, but if they don't define all their variables, may need to drop set -e -u
 
 start=`date +%s`
 
